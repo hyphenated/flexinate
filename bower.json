@@ -1,0 +1,26 @@
+{
+  "name": "flexinate",
+  "version": "0.1.0",
+  "homepage": "https://github.com/hyphenated/flexinate",
+  "authors": [
+    "Hyphenated"
+  ],
+  "description": "A little but powerful SCSS framework to build layouts with flex",
+  "main": "src/flexinate.scss",
+  "keywords": [
+    "flexinate",
+    "css",
+    "scss",
+    "sass",
+    "flex",
+    "flexbox"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

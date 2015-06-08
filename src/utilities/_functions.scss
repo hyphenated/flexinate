@@ -2,7 +2,9 @@
 
 $rem-base: 16px !default;
 
-// Ranges: based on Foundation ranges to get upper and lower ranges of our media queries
+// Ranges
+// Get upper and lower ranges of our media queries
+// Based on Zurb Foundation
 @function lower-bound($range) {
     @if length($range) <= 0 {
       @return 0;
@@ -19,7 +21,17 @@ $rem-base: 16px !default;
 
 // Strip unit
 // It strips the unit of measure and returns it
-// Besed on foundation
+// Based on Zurb Foundation
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
+}
+
+// Is numeric
+// Function to validate if a variables is a numeric value
+@function isNumeric($var) {
+    @if type-of($var) == number {
+        @return unitless($var);
+    } @else {
+        @return false;
+    }
 }

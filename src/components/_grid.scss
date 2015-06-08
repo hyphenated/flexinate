@@ -1,1 +1,130 @@
-// Grid composing mixins and generations for CSS
+// Grid composing mixins and generations
+
+@function grid-calc($col-size, $total-columns) {
+    $result: percentage(($col-size / $total-columns));
+    @if $result == 0% { 
+        $result: 0; 
+    }
+    @return $result;
+}
+
+// Make row: mixing to make row and define it behavior
+@mixin make-row(
+    $column: false,
+    $direction-reverse: false,
+    $wrap: false,
+    $wrap-reverse: false,
+    $justify: 'start',
+    $items: 'stretch',
+    $content: 'stretch',
+    $wrapper: false ) {
+
+    // Direction settings
+    @if $column == true  {
+        @if $direction-reverse == true {
+            flex-direction: column-reverse;
+        } @else {
+            flex-direction: column;
+        }
+    } @else {
+        @if $direction-reverse == true {
+            flex-direction: row-reverse;
+        } @else {
+            flex-direction: row;
+        }
+    }
+
+    // Wrap settings
+    @if $wrap == true {
+        @if $wrap-reverse == true {
+            flex-wrap: wrap-reverse;
+        } @else {
+            flex-wrap: wrap;
+        }
+    } @else {
+        flex-wrap: nowrap;
+    }
+
+    // Justify settings
+    @if $justify == 'end' {
+        justify-content: flex-end;
+    } @else if $justify == 'center' {
+        justify-content: center;
+    } @else if $justify == 'between' {
+        justify-content: space-between;
+    } @else if $justify == 'around' {
+        justify-content: space-around;
+    } else {
+        justify-content: flex-start;
+    }
+
+    // Item alignment settings
+    @if $items == 'start' {
+        align-items: flex-start;
+    } @else if $items == 'end' {
+        align-items: flex-end;
+    } @else if $items == 'between' {
+        align-items: space-between;
+    } @else if $items == 'around' {
+        align-items: space-around;
+    } @else if $items == 'center' {
+        align-items: center;
+    } else {
+        align-items: strech;
+    }
+
+    // Content alignment settings
+    @if $content == 'start' {
+        justify-content: flex-start;
+    } @else if $content == 'end' {
+        justify-content: flex-end;
+    } @else if $content == 'between' {
+        justify-content: space-between;
+    } @else if $content == 'around' {
+        justify-content: space-around;
+    } @else if $content == 'center' {
+        justify-content: center;
+    } else {
+        justify-content: strech;
+    }
+
+    // Wrapper options
+    @if $wrapper == true {
+        max-width: $max-wrapper-width
+    }
+
+    // Base row style
+    display: flex;
+}
+
+@mixin make-column(
+    $order: 0,
+    $grow: 0,
+    $shrink: 1,
+    $size: 'auto',
+    $align: 'auto') {
+    
+    @if $order isNumeric($order)   {
+        flex-order: 0;
+    } @else {
+        flex-order: 0;
+    }
+
+    @if $grow isNumeric($grow)   {
+        flex-grow: 0;    
+    } @else {
+        flex-grow: 0;
+    }
+
+    @if $shrink isNumeric($shrink)   {
+        flex-shrink: 0;
+    } @else {
+        flex-shrink: 0;
+    }
+
+    @if $size isNumeric($size)   {
+        flex-basis: grid-calc($size);
+    } @else {
+        flex-basis: auto;
+    }
+}
