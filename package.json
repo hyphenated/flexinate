@@ -24,7 +24,13 @@
   },
   "homepage": "https://github.com/hyphenated/flexinate",
   "devDependencies": {
-    "autoprefixer": "^5.2.0",
-    "grunt-sass": "^1.0.0"
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.0.0",
+    "load-grunt-tasks": "^3.2.0",
+    "watch": "^0.16.0"
   }
 }

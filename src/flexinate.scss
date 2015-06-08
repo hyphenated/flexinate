@@ -1,1 +1,9 @@
-flexinate.scss
+// Flexinate by Hyphenated
+// Licensed under MIT Open Source
+
+// Base imports
+@import "utilities/functions";
+@import "utilities/variables";
+
+// Components imports
+@import "components/grid";
