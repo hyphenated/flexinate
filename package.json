@@ -1,0 +1,30 @@
+{
+  "name": "flexinate",
+  "version": "0.1.0",
+  "description": "A little but powerful CSS/SCSS framework to build scalable and responsive base layouts for your web apps or websites using flex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyphenated/flexinate.git"
+  },
+  "keywords": [
+    "flex",
+    "scss",
+    "css",
+    "framework",
+    "flexinate"
+  ],
+  "author": "Hyphenated",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyphenated/flexinate/issues"
+  },
+  "homepage": "https://github.com/hyphenated/flexinate",
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "grunt-sass": "^1.0.0"
+  }
+}
