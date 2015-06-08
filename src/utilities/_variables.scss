@@ -1,11 +1,44 @@
 // Variables for overall settings
 
-// Global variables
+// Media Queries variables
+$xsmall-breakpoint:  em-calc(320)  !default;
 $small-breakpoint:  em-calc(640)  !default;
 $medium-breakpoint: em-calc(1024) !default;
 $large-breakpoint:  em-calc(1440) !default;
 $xlarge-breakpoint: em-calc(1920) !default;
 
+$xsmall-range:   (0, $small-breakpoint);
+$small-range:   ($xsmall-breakpoint + em-calc(1), $small-breakpoint);
+$medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
+$large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
+$xlarge-range:  ($large-breakpoint  + em-calc(1), $xlarge-breakpoint);
+$xxlarge-range: ($xlarge-breakpoint + em-calc(1), em-calc(99999999));
+
+$screen: "only screen" !default;
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "#{$screen} and (orientation: portrait)" !default;
+
+$xsmall-up: $screen !default;
+$xsmall-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$small-up: "#{$screen} and (min-width:#{lower-bound($small-range)})" !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
+
+
 // Grid variables
-$column-gutter: 20px !default;
+$column-gutter: em-calc(24) !default;
 $total-columns: 12 !default;
+$max-wrapper-width: 85%;
+

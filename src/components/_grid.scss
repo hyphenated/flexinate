@@ -90,7 +90,7 @@
 
     // Wrapper options
     @if $wrapper == true {
-        max-width: $max-wrapper-width
+        max-width: $max-wrapper-width;
     }
 
     // Base row style
