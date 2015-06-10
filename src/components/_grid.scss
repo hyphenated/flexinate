@@ -63,10 +63,8 @@
         align-items: flex-start;
     } @else if $items == 'end' {
         align-items: flex-end;
-    } @else if $items == 'between' {
-        align-items: space-between;
-    } @else if $items == 'around' {
-        align-items: space-around;
+    } @else if $items == 'baseline' {
+        align-items: baseline;
     } @else if $items == 'center' {
         align-items: center;
     } else {
@@ -74,9 +72,7 @@
     }
 
     // Content alignment settings
-    @if $content == 'start' {
-        justify-content: flex-start;
-    } @else if $content == 'end' {
+    @if $content == 'end' {
         justify-content: flex-end;
     } @else if $content == 'between' {
         justify-content: space-between;
@@ -85,7 +81,7 @@
     } @else if $content == 'center' {
         justify-content: center;
     } else {
-        justify-content: strech;
+        justify-content: start;
     }
 
     // Wrapper options
@@ -98,33 +94,43 @@
 }
 
 @mixin make-column(
-    $order: 0,
-    $grow: 0,
-    $shrink: 1,
+    $collapse: false,
+    $order: false,
+    $grow: false,
+    $shrink: false,
     $size: 'auto',
     $align: 'auto') {
+
+    @if $collapse == true {
+        padding: 0;
+    } @else {
+        padding-left: ($column-gutter/2);
+        padding-right: ($column-gutter/2);
+    }
     
-    @if $order isNumeric($order)   {
-        flex-order: 0;
+    @if $order {
+        flex-order: $order;
     } @else {
         flex-order: 0;
     }
 
-    @if $grow isNumeric($grow)   {
-        flex-grow: 0;    
+    @if $grow {
+        flex-grow: $grow;    
     } @else {
         flex-grow: 0;
     }
 
-    @if $shrink isNumeric($shrink)   {
-        flex-shrink: 0;
+    @if $shrink {
+        flex-shrink: $shrink;
     } @else {
         flex-shrink: 0;
     }
 
-    @if $size isNumeric($size)   {
+    @if $size {
         flex-basis: grid-calc($size);
     } @else {
         flex-basis: auto;
     }
+
+    box-sizing: border-box;
 }
