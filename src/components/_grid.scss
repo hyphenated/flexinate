@@ -102,7 +102,8 @@
     $align: 'auto') {
 
     @if $collapse == true {
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
     } @else {
         padding-left: ($column-gutter/2);
         padding-right: ($column-gutter/2);
