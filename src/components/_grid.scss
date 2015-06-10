@@ -1,6 +1,6 @@
 // Grid composing mixins and generations
 
-@function grid-calc($col-size, $total-columns) {
+@function grid-calc($col-size) {
     $result: percentage(($col-size / $total-columns));
     @if $result == 0% { 
         $result: 0; 
