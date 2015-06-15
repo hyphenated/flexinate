@@ -110,9 +110,9 @@
     }
     
     @if $order {
-        flex-order: $order;
+        order: $order;
     } @else {
-        flex-order: 0;
+        order: 0;
     }
 
     @if $grow {

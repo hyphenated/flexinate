@@ -40,5 +40,5 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 // Grid variables
 $column-gutter: em-calc(24) !default;
 $total-columns: 12 !default;
-$max-wrapper-width: 1200 !default;
+$max-wrapper-width: em-calc(1200px) !default;
 
