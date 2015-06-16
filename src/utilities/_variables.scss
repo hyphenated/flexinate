@@ -7,7 +7,7 @@ $medium-breakpoint: em-calc(1024) !default;
 $large-breakpoint:  em-calc(1440) !default;
 $xlarge-breakpoint: em-calc(1920) !default;
 
-$xsmall-range:   (0, $small-breakpoint);
+$xsmall-range:   (0, $xsmall-breakpoint);
 $small-range:   ($xsmall-breakpoint + em-calc(1), $small-breakpoint);
 $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
 $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
