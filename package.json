@@ -1,6 +1,6 @@
 {
   "name": "flexinate",
-  "version": "0.1.10",
+  "version": "0.2.1",
   "description": "A little but powerful CSS/SCSS framework to build scalable and responsive base layouts for your web apps or websites using flex",
   "main": "index.js",
   "scripts": {
